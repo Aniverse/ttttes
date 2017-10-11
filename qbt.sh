@@ -100,21 +100,21 @@ function _installqbt() {
   && make -j$(nproc) \
   && make install \
   && cd \
-  && git clone -b release-$QBVERSION$ https://github.com/qbittorrent/qBittorrent.git \
+  && git clone -b release-${QBVERSION} https://github.com/qbittorrent/qBittorrent.git \
   && cd qBittorrent \
   && ./configure --prefix=/usr --disable-gui \
   && make -j$(nproc) \
   && make install \
-  && cd
-  rm -rf libtorrent qBittorrent
+  && cd \
+  && rm -rf libtorrent qBittorrent \
+  && clear
 }
 
 
 # 设置 qBittorrent (6)
 function _setqbt() {
-  mkdir -p /root/.config/qBittorrent
   touch /etc/systemd/system/qbittorrent.service
-cat >/etc/systemd/system/qbittorrent.service<<EOF
+  cat >/etc/systemd/system/qbittorrent.service<<EOF
 [Unit]
 Description=qBittorrent Daemon Service
 After=network.target
@@ -127,9 +127,10 @@ ExecStart=/usr/bin/qbittorrent-nox --webui-port=2017
 WantedBy=multi-user.target
 EOF
 
-touch /root/.config/qBittorrent/qBittorrent.conf
+  mkdir -p /root/.config/qBittorrent
+  touch /root/.config/qBittorrent/qBittorrent.conf
 
-cat >/root/.config/qBittorrent/qBittorrent.conf<<EOF
+  cat >/root/.config/qBittorrent/qBittorrent.conf<<EOF
 [LegalNotice]
 Accepted=true
 
@@ -144,10 +145,11 @@ Queueing\QueueingEnabled=false
 WebUI\Port=2017
 EOF
 
-systemctl daemon-reload
+  systemctl daemon-reload >/dev/null 2>&1
+  systemctl enable qbittorrent >/dev/null 2>&1
+  systemctl start qbittorrent >/dev/null 2>&1
+  clear
 }
-
-clear
 
 # 结束 (7)
 function _end() {
