@@ -61,7 +61,7 @@ function _askqbt() {
   echo -e "08) qBittorrent ${cyan}3.3.14${normal}"
   echo -e "09) qBittorrent ${cyan}3.3.15${normal}"
   echo -e "10) qBittorrent ${cyan}3.3.16${normal}"
-  echo -ne "(Default ${cyan}05${normal}): ";read version
+  echo -ne "(Default ${cyan}05${normal}): "; read version
   case $version in
     01) QBVERSION=3.3.7 ;;
     02) QBVERSION=3.3.8 ;;
