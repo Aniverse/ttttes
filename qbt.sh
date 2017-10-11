@@ -48,10 +48,9 @@ function _checkroot() {
   echo
 }
 
-clear
-
 # 询问需要安装的 qBittorrent 的版本 (3)
 function _askqbt() {
+  echo -ne "${bold}${yellow}What version of qBittorrent do you want?${normal} (Default ${cyan}05${normal}): ";
   echo -e "01) qBittorrent ${cyan}3.3.7${normal}"
   echo -e "02) qBittorrent ${cyan}3.3.8${normal}"
   echo -e "03) qBittorrent ${cyan}3.3.9${normal}"
@@ -62,7 +61,7 @@ function _askqbt() {
   echo -e "08) qBittorrent ${cyan}3.3.14${normal}"
   echo -e "09) qBittorrent ${cyan}3.3.15${normal}"
   echo -e "10) qBittorrent ${cyan}3.3.16${normal}"
-  echo -ne "${bold}${yellow}What version of qBittorrent do you want?${normal} (Default ${cyan}05${normal}): "; read version
+  read version
   case $version in
     01) QBVERSION=3.3.7 ;;
     02) QBVERSION=3.3.8 ;;
