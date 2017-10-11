@@ -61,7 +61,7 @@ function _askqbt() {
   echo -e "08) qBittorrent ${cyan}3.3.14${normal}"
   echo -e "09) qBittorrent ${cyan}3.3.15${normal}"
   echo -e "10) qBittorrent ${cyan}3.3.16${normal}"
-  echo -ne "(Default ${cyan}05${normal}): "; read version
+  echo -ne "(Default ${cyan}05${normal}): "  read version
   case $version in
     01) QBVERSION=3.3.7 ;;
     02) QBVERSION=3.3.8 ;;
@@ -73,6 +73,15 @@ function _askqbt() {
     08) QBVERSION=3.3.14 ;;
     09) QBVERSION=3.3.15 ;;
     10) QBVERSION=3.3.16 ;;
+    1) QBVERSION=3.3.7 ;;
+    2) QBVERSION=3.3.8 ;;
+    3) QBVERSION=3.3.9 ;;
+    4) QBVERSION=3.3.10 ;;
+    5) QBVERSION=3.3.11 ;;
+    6) QBVERSION=3.3.12 ;;
+    7) QBVERSION=3.3.13 ;;
+    8) QBVERSION=3.3.14 ;;
+    9) QBVERSION=3.3.15 ;;
     *) QBVERSION=3.3.11 ;;
   esac
   echo "We will be using qBittorrent-${cyan}$QBVERSION${normal}"
