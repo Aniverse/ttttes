@@ -423,18 +423,6 @@ function _end() {
   echo
   echo -e " ${black}${on_green}    BitTorrent Clients Installation Completed    ${normal} "
   echo;echo
-  echo 
-  echo '  -------------------'
-  echo
-  echo -e " ${green}dekai${normal}         - 运行 Deluge"
-  echo -e " ${green}deguan${normal}        - 关闭 Deluge"
-  echo -e " ${green}dewkai${normal}        - 启用 Deluge WebUI"
-  echo -e " ${green}dewguan${normal}       - 停用 Deluge WebUI"
-  echo -e " ${green}qbkai${normal}         - 运行 qBittorrent-nox"
-  echo -e " ${green}qbguan${normal}        - 关闭 qBittorrent-nox"
-  echo -e " ${green}qbzhuangtai${normal}   - 查询 qBittorrent-nox 当前运行状态"
-  echo -e " ${green}rsskai${normal}        - 运行 Flexget Daemon"
-  echo -e " ${green}rssguan${normal}       - 关闭 Flexget Daemon"
   echo
   echo
   echo '####################################################################'
